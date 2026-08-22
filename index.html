@@ -13,7 +13,7 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="FINDER 홈"><span class="brand-square">F</span><span>FINDER</span></a>
-      <nav aria-label="주요 메뉴"><a class="active" href="#finder">공고 찾기</a><a href="#guide">커리어 가이드</a></nav>
+      <nav aria-label="주요 메뉴"><a class="active" href="#finder">공고 찾기</a><a href="#board">익명 게시판</a><a href="#guide">커리어 가이드</a></nav>
       <div class="top-actions"><button class="saved-nav" id="savedNav" aria-label="저장한 공고 보기"><span>저장</span><b id="savedCount">0</b></button><button class="profile" aria-label="프로필 김커리어"><span>김</span><em>김커리어</em></button></div>
     </header>
 
@@ -52,6 +52,7 @@
         </section>
       </section>
 
+      <section class="board" id="board" aria-labelledby="boardTitle"><div class="board-heading"><div><p class="section-label">ANONYMOUS BOARD</p><h2 id="boardTitle">혼자 고민하지 않아도 괜찮아요</h2><p>대학생과 취준생이 진로와 취업 고민을 익명으로 나누는 공간입니다.</p></div><button id="newBoardPost" class="board-primary">글쓰기</button></div><div class="board-layout"><div class="board-list"><div class="board-list-head"><b id="boardCount">0</b>개의 이야기</div><div id="boardPosts" class="board-posts"><div class="board-empty">아직 올라온 이야기가 없어요.<br />첫 고민을 남겨보세요.</div></div></div><form id="boardForm" class="board-form"><div class="board-form-head"><p>WRITE ANONYMOUSLY</p><h3 id="boardFormTitle">새 이야기 남기기</h3></div><input id="boardPostId" type="hidden" /><label>닉네임 <input id="boardNickname" type="text" maxlength="30" placeholder="익명" /></label><label>제목 <input id="boardTitleInput" type="text" maxlength="120" placeholder="어떤 고민이 있나요?" required /></label><label>내용 <textarea id="boardContent" maxlength="5000" placeholder="편하게 이야기해 주세요." required></textarea></label><label>비밀번호 <input id="boardPassword" type="password" minlength="4" maxlength="100" placeholder="수정·삭제에 필요해요" required /></label><p class="board-form-note">비밀번호는 글 수정과 삭제에만 사용되며 저장하지 않습니다.</p><div class="board-form-actions"><button type="button" id="cancelBoardEdit" class="board-secondary" hidden>취소</button><button type="submit" class="board-primary" id="boardSubmit">게시하기</button></div></form></div></section>
       <section class="guide" id="guide"><div><p class="section-label">CAREER NOTE</p><h2>지원 전에 확인하면 좋은 것</h2></div><a href="#finder"><span>01</span><b>공고의 업무 내용을 먼저 읽기</b><i>↗</i></a><a href="#finder"><span>02</span><b>마감일보다 나의 적합도 확인하기</b><i>↗</i></a></section>
     </main>
 
