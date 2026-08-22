@@ -1,120 +1,28 @@
 const jobs = [
-  { id: 1, company: "네이버", logo: "N", color: "#20c76f", title: "Tech 체험형 인턴 — Frontend", category: "개발", tags: ["인턴", "React", "신입 가능"], score: 96, days: 3, posted: 2, location: "경기 성남", type: "체험형 인턴", description: "사용자에게 더 빠르고 편리한 웹 경험을 제공할 프론트엔드 인턴을 찾습니다. 실제 서비스 개선 과제에 참여하며 동료 개발자와 함께 성장할 수 있어요." },
-  { id: 2, company: "카카오페이", logo: "pay", color: "#22221f", title: "데이터 분석 어시스턴트", category: "데이터", tags: ["인턴", "SQL", "Python"], score: 94, days: 5, posted: 1, location: "경기 성남", type: "인턴", description: "결제 서비스 데이터를 통해 사용자의 행동을 이해하고, 팀의 의사결정을 돕는 분석 업무를 경험합니다. SQL 기초와 논리적인 사고를 중요하게 봅니다." },
-  { id: 3, company: "오늘의집", logo: "oh", color: "#35b6ed", title: "콘텐츠 마케팅 인턴", category: "마케팅", tags: ["인턴", "콘텐츠", "SNS"], score: 91, days: 7, posted: 4, location: "서울 서초", type: "인턴", description: "라이프스타일 콘텐츠를 기획하고 브랜드 채널을 운영합니다. 트렌드에 민감하고 직접 콘텐츠를 만들어본 경험이 있다면 좋아요." },
-  { id: 4, company: "우아한형제들", logo: "배민", color: "#28b9b7", title: "프로덕트 기획 보조", category: "기획", tags: ["계약직", "서비스 기획", "UX"], score: 89, days: 2, posted: 5, location: "서울 송파", type: "3개월 계약", description: "고객과 사장님의 문제를 발견하고 서비스 개선안을 구체화합니다. 리서치, 데이터 정리, 화면 정책 작성 등 기획 전반을 경험할 수 있습니다." },
-  { id: 5, company: "토스", logo: "T", color: "#3478f6", title: "UX Research Assistant", category: "디자인", tags: ["인턴", "리서치", "Figma"], score: 88, days: 10, posted: 3, location: "서울 강남", type: "인턴", description: "사용자 인터뷰와 사용성 테스트를 지원하고 인사이트를 정리합니다. 사람의 행동을 세심하게 관찰하고 기록하는 분을 기다립니다." },
-  { id: 6, company: "당근", logo: "당근", color: "#ff6f21", title: "지역생활 커뮤니티 운영 인턴", category: "마케팅", tags: ["인턴", "커뮤니티", "운영"], score: 86, days: 1, posted: 8, location: "서울 서초", type: "인턴", description: "동네의 연결을 더 따뜻하게 만드는 커뮤니티 운영 업무를 함께합니다. 사용자 문의와 콘텐츠 운영을 통해 서비스 감각을 기를 수 있어요." },
-  { id: 7, company: "무신사", logo: "M", color: "#161616", title: "Junior Product Designer", category: "디자인", tags: ["신입", "UI/UX", "포트폴리오"], score: 84, days: 12, posted: 6, location: "서울 성동", type: "정규직", description: "패션을 사랑하는 고객을 위한 모바일 경험을 설계합니다. 문제 정의부터 프로토타이핑까지 주도적으로 참여하게 됩니다." },
-  { id: 8, company: "야놀자", logo: "Y", color: "#ff3478", title: "서비스 운영 및 데이터 관리", category: "데이터", tags: ["인턴", "Excel", "데이터"], score: 82, days: 6, posted: 7, location: "서울 강남", type: "인턴", description: "여행 상품 데이터를 정확하게 관리하고 운영 효율을 높이는 업무를 맡습니다. 꼼꼼함과 스프레드시트 활용 능력이 필요합니다." },
-  { id: 9, company: "뤼튼테크놀로지스", logo: "wr", color: "#6958f5", title: "AI 서비스 기획 인턴", category: "기획", tags: ["인턴", "생성형 AI", "기획"], score: 81, days: 9, posted: 1, location: "서울 서초", type: "인턴", description: "생성형 AI 기반 신규 기능을 탐색하고 사용자 피드백을 제품에 반영합니다. 새로운 도구를 빠르게 실험해보는 분에게 잘 맞습니다." },
-  { id: 10, company: "쿠팡", logo: "C", color: "#e4463a", title: "Backend Engineer 신입", category: "개발", tags: ["신입", "Java", "대규모 트래픽"], score: 79, days: 14, posted: 9, location: "서울 송파", type: "정규직", description: "수백만 고객이 사용하는 커머스 플랫폼의 백엔드 시스템을 개발합니다. 탄탄한 자료구조와 문제 해결 역량을 기대합니다." },
-  { id: 11, company: "직방", logo: "Z", color: "#7950f2", title: "Business Data Analyst 인턴", category: "데이터", tags: ["인턴", "Tableau", "SQL"], score: 77, days: 4, posted: 2, location: "서울 강남", type: "인턴", description: "부동산 시장과 서비스 데이터를 분석해 비즈니스 인사이트를 도출합니다. 대시보드 제작 경험이 있다면 우대합니다." },
-  { id: 12, company: "29CM", logo: "29", color: "#343434", title: "브랜드 마케팅 어시스턴트", category: "마케팅", tags: ["계약직", "브랜딩", "캠페인"], score: 75, days: 8, posted: 10, location: "서울 성동", type: "6개월 계약", description: "감도 높은 브랜드와 고객이 만나는 캠페인을 운영합니다. 제안서 작성, 파트너 소통, 성과 리포트를 담당합니다." }
+  { id:1, order:1, company:"한화솔루션", logo:"H", color:"#263126", title:"태양광 소재 연구개발 인턴", type:"인턴", fields:["연구","실험"], location:"대전·세종·충청권", companyType:"대기업·중견기업", workMode:"출근", eligibility:["재학생","졸업예정자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:18, match:94, visual:"lab", description:"태양광 소재의 특성을 분석하고 실험 데이터를 정리합니다. 연구팀의 실험 과정을 가까이에서 경험하며 에너지 분야의 첫 커리어를 시작할 수 있습니다.", tags:["인턴","연구개발","실험"] },
+  { id:2, order:2, company:"한국에너지기술연구원", logo:"K", color:"#202020", title:"에너지저장 연구실 연구원", type:"신입", fields:["연구","품질"], location:"대전·세종·충청권", companyType:"공기업·공공기관", workMode:"출근", eligibility:["졸업예정자","졸업자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:23, match:93, visual:"energy", description:"에너지저장 시스템의 성능을 측정하고 연구 결과를 기록합니다. 새로운 에너지 기술의 가능성을 직접 확인하는 연구 직무입니다.", tags:["신입","에너지저장","연구"] },
+  { id:3, order:3, company:"두산에너빌리티", logo:"D", color:"#42515b", title:"발전설비 품질관리 신입", type:"신입", fields:["품질"], location:"영남권", companyType:"대기업·중견기업", workMode:"출근", eligibility:["졸업예정자","졸업자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:14, match:91, visual:"quality", description:"발전설비 품질 데이터를 확인하고 검사 결과를 관리합니다. 현장과 사무 업무를 함께 경험하며 품질관리의 기본을 배웁니다.", tags:["신입","품질관리","설비"] },
+  { id:4, order:4, company:"SK E&S", logo:"SK", color:"#202020", title:"수소사업 전략기획 인턴", type:"인턴", fields:["연구"], location:"수도권", companyType:"대기업·중견기업", workMode:"하이브리드", eligibility:["재학생","졸업예정자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:12, match:88, visual:"experiment", description:"수소 산업 자료를 조사하고 사업 현황을 정리합니다. 에너지 전환의 흐름을 읽고 기획 업무를 경험할 수 있습니다.", tags:["인턴","수소","기획"] },
+  { id:5, order:5, company:"한국가스공사", logo:"K", color:"#53644e", title:"친환경 에너지 실험 보조", type:"인턴", fields:["실험","품질"], location:"대전·세종·충청권", companyType:"공기업·공공기관", workMode:"출근", eligibility:["재학생","졸업예정자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:10, match:87, visual:"experiment", description:"친환경 에너지 설비의 실험을 보조하고 결과를 기록합니다. 실험실에서 팀과 함께 꼼꼼하게 일하는 경험을 쌓습니다.", tags:["인턴","친환경","실험"] },
+  { id:6, order:6, company:"LG에너지솔루션", logo:"LG", color:"#3d3150", title:"배터리 공정 품질 신입", type:"신입", fields:["품질","실험"], location:"수도권", companyType:"대기업·중견기업", workMode:"출근", eligibility:["졸업예정자","졸업자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:9, match:86, visual:"quality", description:"배터리 공정의 품질 기준을 확인하고 개선 데이터를 관리합니다. 제품이 완성되는 과정을 가까이에서 배우는 직무입니다.", tags:["신입","배터리","품질"] },
+  { id:7, order:7, company:"에코프로", logo:"E", color:"#3c5248", title:"이차전지 소재 생산관리", type:"신입", fields:["품질"], location:"영남권", companyType:"스타트업·중소기업", workMode:"출근", eligibility:["졸업예정자","졸업자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:5, match:83, visual:"energy", description:"이차전지 소재 생산 데이터를 관리하고 공정 품질을 확인합니다.", tags:["신입","소재","생산관리"] },
+  { id:8, order:8, company:"그린랩스", logo:"G", color:"#6c6b35", title:"탄소 데이터 분석 인턴", type:"인턴", fields:["연구"], location:"수도권", companyType:"스타트업·중소기업", workMode:"하이브리드", eligibility:["재학생","졸업예정자"], experience:"신입·무경력", major:"전공 무관", salary:"급여 있음", days:3, match:79, visual:"experiment", description:"탄소 배출 데이터를 모으고 환경 리포트 작성을 돕습니다.", tags:["인턴","탄소","데이터"] }
 ];
 
-const state = { category: "전체", query: "", sort: "recommend", visible: 6, saved: new Set(JSON.parse(localStorage.getItem("careerpin-saved") || "[]")), view: "grid", savedOnly: false };
-const grid = document.querySelector("#jobGrid");
-const count = document.querySelector("#resultCount");
-const empty = document.querySelector("#emptyState");
-const loadMore = document.querySelector("#loadMore");
-const searchInput = document.querySelector("#searchInput");
-const modal = document.querySelector("#modalBackdrop");
-let toastTimer;
-
-function filteredJobs() {
-  const q = state.query.trim().toLowerCase();
-  const result = jobs.filter(job => {
-    const categoryMatch = state.category === "전체" || job.category === state.category;
-    const searchMatch = !q || [job.company, job.title, job.category, ...job.tags].join(" ").toLowerCase().includes(q);
-    const savedMatch = !state.savedOnly || state.saved.has(job.id);
-    return categoryMatch && searchMatch && savedMatch;
-  });
-  return result.sort((a, b) => state.sort === "deadline" ? a.days - b.days : state.sort === "newest" ? a.posted - b.posted : b.score - a.score);
-}
-
-function render() {
-  const result = filteredJobs();
-  const visibleJobs = result.slice(0, state.visible);
-  count.textContent = result.length;
-  grid.className = `job-grid ${state.view === "list" ? "list-view" : ""}`;
-  grid.innerHTML = visibleJobs.map((job, index) => `
-    <article class="job-card" tabindex="0" data-id="${job.id}" style="animation-delay:${index * 35}ms">
-      <div class="job-card-top">
-        <span class="company-logo" style="background:${job.color}">${job.logo}</span>
-        <button class="bookmark ${state.saved.has(job.id) ? "saved" : ""}" data-save="${job.id}" aria-label="${state.saved.has(job.id) ? "저장 취소" : "공고 저장"}">
-          <svg viewBox="0 0 24 24"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3.7L6 21V4.8Z"/></svg>
-        </button>
-      </div>
-      <div class="job-card-body">
-        <p class="company-name">${job.company}</p>
-        <h3 class="job-title">${job.title}</h3>
-        <div class="job-tags">${job.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
-      </div>
-      <div class="job-card-footer">
-        <span class="match-score">MATCH ${job.score}%</span>
-        <span class="deadline ${job.days <= 3 ? "soon" : ""}">D-${job.days}</span>
-      </div>
-    </article>`).join("");
-  empty.hidden = result.length > 0;
-  grid.hidden = result.length === 0;
-  loadMore.hidden = result.length === 0 || state.visible >= result.length;
-  document.querySelector(".saved-count").textContent = state.saved.size;
-}
-
-function showToast(message) {
-  const toast = document.querySelector("#toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
-}
-
-function toggleSave(id) {
-  state.saved.has(id) ? state.saved.delete(id) : state.saved.add(id);
-  localStorage.setItem("careerpin-saved", JSON.stringify([...state.saved]));
-  render();
-  showToast(state.saved.has(id) ? "관심 공고에 저장했어요." : "관심 공고에서 삭제했어요.");
-}
-
-function openJob(id) {
-  const job = jobs.find(item => item.id === id);
-  if (!job) return;
-  document.querySelector("#modalContent").innerHTML = `
-    <div class="modal-company"><span class="company-logo" style="background:${job.color}">${job.logo}</span><div><b>${job.company}</b><p>${job.location}</p></div></div>
-    <h2 id="modalTitle">${job.title}</h2>
-    <div class="job-tags">${job.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
-    <div class="modal-summary"><div><span>고용 형태</span><b>${job.type}</b></div><div><span>근무 지역</span><b>${job.location}</b></div><div><span>접수 마감</span><b>D-${job.days}</b></div></div>
-    <section class="modal-section"><h3>이 공고가 잘 맞는 이유</h3><p>프로필의 관심 직무 및 보유 역량과 <b>${job.score}%</b> 일치해요. 특히 ${job.tags.slice(1).join(", ")} 관련 경험을 쌓기에 좋은 기회예요.</p></section>
-    <section class="modal-section"><h3>주요 업무</h3><p>${job.description}</p></section>
-    <button class="apply-button" data-apply="${job.id}">지원 준비하기</button>`;
-  modal.hidden = false;
-  document.body.style.overflow = "hidden";
-  document.querySelector(".modal-close").focus();
-}
-
-function closeModal() { modal.hidden = true; document.body.style.overflow = ""; }
-function runSearch() { state.query = searchInput.value; state.visible = 6; state.savedOnly = false; render(); document.querySelector("#jobs").scrollIntoView({ behavior: "smooth" }); }
-function resetAll() { state.category = "전체"; state.query = ""; state.sort = "recommend"; state.visible = 6; state.savedOnly = false; searchInput.value = ""; document.querySelector("#sortSelect").value = "recommend"; document.querySelectorAll(".filter-pill").forEach(btn => btn.classList.toggle("active", btn.dataset.category === "전체")); render(); }
-
-document.querySelector("#categoryFilters").addEventListener("click", event => {
-  const button = event.target.closest(".filter-pill"); if (!button) return;
-  state.category = button.dataset.category; state.visible = 6; state.savedOnly = false;
-  document.querySelectorAll(".filter-pill").forEach(btn => btn.classList.toggle("active", btn === button)); render();
-});
-document.querySelector("#sortSelect").addEventListener("change", event => { state.sort = event.target.value; render(); });
-document.querySelector("#searchButton").addEventListener("click", runSearch);
-searchInput.addEventListener("keydown", event => { if (event.key === "Enter") runSearch(); });
-document.querySelectorAll(".popular-searches button").forEach(button => button.addEventListener("click", () => { searchInput.value = button.textContent; runSearch(); }));
-document.querySelectorAll(".view-btn").forEach(button => button.addEventListener("click", () => { state.view = button.dataset.view; document.querySelectorAll(".view-btn").forEach(btn => btn.classList.toggle("active", btn === button)); render(); }));
-grid.addEventListener("click", event => { const save = event.target.closest("[data-save]"); if (save) { event.stopPropagation(); toggleSave(Number(save.dataset.save)); return; } const card = event.target.closest(".job-card"); if (card) openJob(Number(card.dataset.id)); });
-grid.addEventListener("keydown", event => { if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("job-card")) openJob(Number(event.target.dataset.id)); });
-loadMore.addEventListener("click", () => { state.visible += 3; render(); });
-document.querySelector("#resetFilters").addEventListener("click", resetAll);
-document.querySelector("#emptyReset").addEventListener("click", resetAll);
-document.querySelector(".saved-button").addEventListener("click", () => { state.savedOnly = !state.savedOnly; state.visible = 99; render(); document.querySelector("#jobs").scrollIntoView({ behavior: "smooth" }); showToast(state.savedOnly ? "저장한 공고만 보고 있어요." : "전체 공고를 표시합니다."); });
-document.querySelector(".modal-close").addEventListener("click", closeModal);
-modal.addEventListener("click", event => { if (event.target === modal) closeModal(); const apply = event.target.closest("[data-apply]"); if (apply) showToast("지원 체크리스트를 준비했어요!"); });
-document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
-
+const state = { type:"전체", fields:new Set(), location:"전체", companyType:"전체", workMode:"전체", eligibility:"전체", deadlineOnly:true, savedOnly:false, query:"", view:"grid", saved:new Set(JSON.parse(localStorage.getItem("finder-saved") || "[]")) };
+const $ = selector => document.querySelector(selector); const $$ = selector => [...document.querySelectorAll(selector)];
+function fieldRank(job) { if (job.fields.includes("연구") && job.fields.includes("실험")) return 3; if (job.fields.includes("연구")) return 2; if (job.fields.includes("실험")) return 1; if (job.fields.includes("품질")) return 1; return 0; }
+function filteredJobs() { const query=state.query.trim().toLowerCase(); return jobs.filter(job => { const text=[job.company,job.title,...job.fields,...job.tags].join(" ").toLowerCase(); return (state.type === "전체" || job.type === state.type) && (!state.fields.size || job.fields.some(field => state.fields.has(field))) && (state.location === "전체" || job.location === state.location) && (state.companyType === "전체" || job.companyType === state.companyType) && (state.workMode === "전체" || job.workMode === state.workMode) && (state.eligibility === "전체" || job.eligibility.includes(state.eligibility)) && (!state.deadlineOnly || job.days >= 7) && (!state.savedOnly || state.saved.has(job.id)) && (!query || text.includes(query)); }).sort((a,b) => fieldRank(b)-fieldRank(a) || a.order-b.order); }
+function card(job,index) { const saved=state.saved.has(job.id); return `<article class="job-card" tabindex="0" data-id="${job.id}" style="animation-delay:${index*35}ms"><div class="card-header"><div class="company-mark"><span class="company-logo" style="background:${job.color}">${job.logo}</span><span>${job.company}</span></div><button class="bookmark ${saved ? "saved" : ""}" data-save="${job.id}" aria-label="${saved ? "저장 취소" : "공고 저장"}">${saved ? "★" : "☆"}</button></div><div class="card-copy"><p class="company-line">${job.type} · ${job.location}</p><h3 class="job-title">${job.title}</h3></div><div class="card-visual visual-${job.visual}"><span class="visual-word">${job.fields.join(" · ")}</span><span class="visual-number">0${job.id}</span></div><div class="card-tags">${job.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div><div class="card-meta"><div class="meta-item"><span>지원 자격</span><b>${job.eligibility.join(" · ")}</b></div><div class="meta-item"><span>경력 · 전공</span><b>${job.experience} · ${job.major}</b></div><div class="meta-item"><span>근무 방식</span><b>${job.workMode}</b></div><div class="meta-item"><span>급여</span><b>${job.salary}</b></div></div><div class="card-footer"><span class="match">추천도 <b>${job.match}%</b></span><span class="deadline ${job.days<7 ? "soon" : ""}">D-${job.days}</span></div></article>`; }
+function render() { const result=filteredJobs(); $("#jobGrid").className=`job-grid ${state.view === "list" ? "list-view" : ""}`; $("#jobGrid").innerHTML=result.map(card).join(""); $("#jobGrid").hidden=!result.length; $("#emptyState").hidden=!!result.length; $("#resultCount").textContent=result.length; $("#heroCount").textContent=result.length; $("#savedCount").textContent=state.saved.size; $("#activeChips").innerHTML=activeChips().map(chip => `<span class="active-chip">${chip}</span>`).join(""); $$("input[name=jobType]").forEach(input => input.closest(".choice").classList.toggle("active",input.checked)); }
+function activeChips() { const chips=[]; if(state.type !== "전체") chips.push(state.type); state.fields.forEach(field => chips.push(field)); if(state.location !== "전체") chips.push(state.location); if(state.companyType !== "전체") chips.push(state.companyType); if(state.workMode !== "전체") chips.push(state.workMode); if(state.savedOnly) chips.push("저장한 공고"); return chips; }
+function toast(message) { const el=$("#toast"); el.textContent=message; el.classList.add("show"); clearTimeout(window.toastTimer); window.toastTimer=setTimeout(() => el.classList.remove("show"),1800); }
+function toggleSave(id) { state.saved.has(id) ? state.saved.delete(id) : state.saved.add(id); localStorage.setItem("finder-saved",JSON.stringify([...state.saved])); render(); toast(state.saved.has(id) ? "저장한 공고에 추가했어요." : "저장한 공고에서 삭제했어요."); }
+function openJob(id) { const job=jobs.find(item => item.id === id); if(!job)return; $("#modalContent").innerHTML=`<div class="modal-top"><div><div class="modal-company"><span class="company-logo" style="background:${job.color}">${job.logo}</span><div><b>${job.company}</b><p>${job.location} · ${job.companyType}</p></div></div><h2 id="modalTitle">${job.title}</h2></div><button class="modal-apply" data-apply="${job.id}">지원하기</button></div><div class="modal-tags">${job.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div><div class="modal-summary"><div><span>채용 형태</span><b>${job.type}</b></div><div><span>지원 자격</span><b>${job.eligibility.join(" · ")}</b></div><div><span>마감</span><b>D-${job.days}</b></div></div><section class="modal-section"><h3>주요 업무</h3><p>${job.description}</p></section><section class="modal-section"><h3>추천 이유</h3><p>공고 데이터의 업무 분야와 지원 조건을 기준으로 추천도 <b>${job.match}%</b>를 표시하고 있어요.</p></section>`; $("#modalBackdrop").hidden=false; document.body.style.overflow="hidden"; }
+function closeModal() { $("#modalBackdrop").hidden=true; document.body.style.overflow=""; }
+function resetFilters() { state.type="전체"; state.fields.clear(); state.location="전체"; state.companyType="전체"; state.workMode="전체"; state.eligibility="전체"; state.deadlineOnly=true; state.savedOnly=false; state.query=""; $("#searchInput").value=""; $$("input[name=jobType]").forEach(input => input.checked=input.value === "전체"); $$("input[name=field]").forEach(input => input.checked=false); ["location","companyType","workMode","eligibility"].forEach(id => $("#"+id).value="전체"); $("#deadlineOnly").checked=true; $("#savedOnly").checked=false; render(); }
+$("#searchBtn").addEventListener("click",() => { state.query=$("#searchInput").value; render(); $("#finder").scrollIntoView({behavior:"smooth"}); }); $("#searchInput").addEventListener("keydown",e => { if(e.key === "Enter") $("#searchBtn").click(); });
+$("#filterPanel").addEventListener("change",e => { if(e.target.name === "jobType") state.type=e.target.value; if(e.target.name === "field") e.target.checked ? state.fields.add(e.target.value) : state.fields.delete(e.target.value); if(["location","companyType","workMode","eligibility"].includes(e.target.id)) state[e.target.id]=e.target.value; if(e.target.id === "deadlineOnly") state.deadlineOnly=e.target.checked; if(e.target.id === "savedOnly") state.savedOnly=e.target.checked; render(); });
+$("#resetFilters").addEventListener("click",resetFilters); $("#emptyReset").addEventListener("click",resetFilters); $("#savedNav").addEventListener("click",() => { state.savedOnly=!state.savedOnly; $("#savedOnly").checked=state.savedOnly; render(); toast(state.savedOnly ? "저장한 공고만 보고 있어요." : "전체 공고를 보고 있어요."); }); $("#openFilters").addEventListener("click",() => $("#filterPanel").classList.add("open")); $("#closeFilters").addEventListener("click",() => $("#filterPanel").classList.remove("open")); $$(".view-toggle").forEach(button => button.addEventListener("click",() => { state.view=button.dataset.view; $$(".view-toggle").forEach(item => item.classList.toggle("active",item === button)); render(); }));
+$("#jobGrid").addEventListener("click",e => { const save=e.target.closest("[data-save]"); if(save){e.stopPropagation();toggleSave(Number(save.dataset.save));return;} const cardEl=e.target.closest(".job-card"); if(cardEl)openJob(Number(cardEl.dataset.id)); }); $("#jobGrid").addEventListener("keydown",e => { if((e.key === "Enter" || e.key === " ") && e.target.classList.contains("job-card")) openJob(Number(e.target.dataset.id)); }); $("#modalClose").addEventListener("click",closeModal); $("#modalBackdrop").addEventListener("click",e => { if(e.target.id === "modalBackdrop") closeModal(); const apply=e.target.closest("[data-apply]"); if(apply) toast("지원 페이지 연결을 준비 중이에요."); }); document.addEventListener("keydown",e => { if(e.key === "Escape" && !$("#modalBackdrop").hidden) closeModal(); });
 render();

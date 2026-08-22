@@ -3,107 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="대학생을 위한 맞춤 채용공고 추천 서비스, 커리어핀" />
-    <title>커리어핀 — 내 가능성을 발견하는 채용 추천</title>
+    <meta name="description" content="에너지공학과 학생을 위한 신입·인턴 채용공고 파인더" />
+    <title>FINDER — 내가 찾던 첫 커리어</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#" aria-label="커리어핀 홈">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>커리어핀</span>
-      </a>
-      <nav class="desktop-nav" aria-label="주요 메뉴">
-        <a class="active" href="#jobs">채용공고</a>
-        <a href="#programs">인턴·대외활동</a>
-        <a href="#career">커리어 가이드</a>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-button saved-button" aria-label="저장한 공고 보기" title="저장한 공고">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3.7L6 21V4.8Z"/></svg>
-          <span class="saved-count">0</span>
-        </button>
-        <button class="profile-button"><span>김</span><b>김커리어</b></button>
-      </div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="FINDER 홈"><span class="brand-square">F</span><span>FINDER</span></a>
+      <nav aria-label="주요 메뉴"><a class="active" href="#finder">공고 찾기</a><a href="#guide">커리어 가이드</a></nav>
+      <div class="top-actions"><button class="saved-nav" id="savedNav" aria-label="저장한 공고 보기"><span>저장</span><b id="savedCount">0</b></button><button class="profile" aria-label="프로필 김커리어"><span>김</span><em>김커리어</em></button></div>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span>✦</span> 대학생 맞춤 채용 큐레이션</p>
-          <h1 id="hero-title">첫 커리어의 시작,<br /><em>나답게</em> 고르세요.</h1>
-          <p class="hero-description">전공과 관심 분야를 바탕으로 지금 지원하기 좋은 공고만 골라드려요.</p>
-          <div class="search-box" role="search">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-            <input id="searchInput" type="search" placeholder="회사, 직무, 기술을 검색해보세요" autocomplete="off" />
-            <kbd>Enter</kbd>
-            <button id="searchButton">검색</button>
-          </div>
-          <div class="popular-searches"><span>인기 검색</span><button>데이터 분석</button><button>마케팅 인턴</button><button>서비스 기획</button></div>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">CAREER FINDER <span>2026</span></p>
+          <h1>첫 커리어를<br /><strong>정확하게</strong> 찾는 방법.</h1>
+          <p class="hero-copy">에너지공학과 학생에게 필요한 공고만<br class="desktop-break" /> 한눈에 비교할 수 있게 모았습니다.</p>
+          <div class="hero-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="searchInput" type="search" placeholder="직무, 기업, 업무 분야로 검색" /><button id="searchBtn">찾기</button></div>
+          <div class="hero-note"><span class="dot"></span> 지금 <b id="heroCount">0</b>개의 공고를 확인할 수 있어요</div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-          <div class="floating-chip chip-top"><span>✨</span><div><b>추천 정확도</b><strong>92%</strong></div></div>
-          <div class="floating-chip chip-bottom"><span>↗</span><div><b>이번 주 신규 공고</b><strong>+128</strong></div></div>
-          <div class="student-card">
-            <div class="card-dots"><i></i><i></i><i></i></div>
-            <div class="avatar-illustration">
-              <div class="hair"></div><div class="face"></div><div class="body-shape"></div><div class="laptop"><span>pin</span></div>
-            </div>
-            <div class="match-pill">나와 잘 맞는 공고를 찾았어요!</div>
-          </div>
-        </div>
+        <div class="hero-art" aria-hidden="true"><div class="art-orbit"></div><div class="art-paper"><span>FINDER</span><strong>01</strong><i></i><i></i><i></i></div><div class="art-label"><b>추천도</b><strong>92%</strong></div></div>
       </section>
 
-      <section class="dashboard" id="jobs">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">FOR YOU</p>
-            <h2><span>김커리어</span>님을 위한 추천 공고</h2>
-            <p>관심 직무와 프로필을 바탕으로 선별했어요.</p>
+      <section class="finder-layout" id="finder">
+        <aside class="filter-panel" id="filterPanel" aria-label="공고 필터">
+          <div class="filter-heading"><div><p>FILTER</p><h2>조건 고르기</h2></div><button id="closeFilters" class="panel-close" aria-label="필터 닫기">×</button></div>
+          <div class="filter-scroll-area">
+            <fieldset><legend>채용 형태</legend><label class="choice active"><input type="radio" name="jobType" value="전체" checked /><span>전체</span><small>ALL</small></label><label class="choice"><input type="radio" name="jobType" value="인턴" /><span>인턴</span><small>INTERNSHIP</small></label><label class="choice"><input type="radio" name="jobType" value="신입" /><span>신입</span><small>ENTRY</small></label></fieldset>
+            <fieldset><legend>업무 분야 <small>복수 선택</small></legend><label class="check"><input type="checkbox" name="field" value="연구" /><span>연구</span></label><label class="check"><input type="checkbox" name="field" value="실험" /><span>실험</span></label><label class="check"><input type="checkbox" name="field" value="품질" /><span>품질</span></label></fieldset>
+            <fieldset class="select-field"><label for="location">근무 지역</label><select id="location"><option>전체</option><option>대전·세종·충청권</option><option>수도권</option><option>영남권</option><option>호남권</option></select></fieldset>
+            <fieldset class="select-field"><label for="companyType">기업 유형</label><select id="companyType"><option>전체</option><option>대기업·중견기업</option><option>공기업·공공기관</option><option>스타트업·중소기업</option></select></fieldset>
+            <fieldset class="select-field"><label for="workMode">근무 방식</label><select id="workMode"><option>전체</option><option>출근</option><option>하이브리드</option><option>재택</option></select></fieldset>
+            <fieldset class="select-field"><label for="eligibility">지원 자격</label><select id="eligibility"><option>전체</option><option>재학생</option><option>졸업예정자</option><option>졸업자</option></select></fieldset>
+            <fieldset class="switches"><label class="switch-row"><span><b>마감 7일 이상</b><small>지원 준비 시간을 확보해요</small></span><input id="deadlineOnly" type="checkbox" checked /><i></i></label><label class="switch-row"><span><b>저장한 공고만</b><small>내 관심 목록에서 찾아요</small></span><input id="savedOnly" type="checkbox" /><i></i></label></fieldset>
           </div>
-          <div class="view-control" aria-label="보기 방식">
-            <button class="view-btn active" data-view="grid" aria-label="카드 보기"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></button>
-            <button class="view-btn" data-view="list" aria-label="목록 보기"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r=".5"/><circle cx="3.5" cy="12" r=".5"/><circle cx="3.5" cy="18" r=".5"/></svg></button>
-          </div>
-        </div>
+          <button id="resetFilters" class="reset-button">조건 초기화 <span>↺</span></button>
+        </aside>
 
-        <div class="filter-row">
-          <div class="filter-scroll" id="categoryFilters">
-            <button class="filter-pill active" data-category="전체">전체</button>
-            <button class="filter-pill" data-category="개발">개발</button>
-            <button class="filter-pill" data-category="데이터">데이터</button>
-            <button class="filter-pill" data-category="기획">기획</button>
-            <button class="filter-pill" data-category="마케팅">마케팅</button>
-            <button class="filter-pill" data-category="디자인">디자인</button>
-          </div>
-          <label class="sort-select">정렬 <select id="sortSelect"><option value="recommend">추천순</option><option value="deadline">마감 임박순</option><option value="newest">최신순</option></select></label>
-        </div>
-
-        <div class="result-meta"><p><strong id="resultCount">0</strong>개의 공고</p><button id="resetFilters">필터 초기화 ↺</button></div>
-        <div class="job-grid" id="jobGrid"></div>
-        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>조건에 맞는 공고가 없어요</h3><p>검색어나 필터를 조금 바꿔보세요.</p><button id="emptyReset">전체 공고 보기</button></div>
-        <button class="load-more" id="loadMore">공고 더 보기 <span>↓</span></button>
+        <section class="results" aria-labelledby="resultsTitle">
+          <div class="results-head"><div><p class="section-label">CURATED FOR YOU</p><h2 id="resultsTitle">지금 지원하기 좋은 공고</h2><p class="subcopy">연구·실험·품질 분야를 먼저 보여드려요.</p></div><button id="openFilters" class="mobile-filter-button">필터 <span>≡</span></button></div>
+          <div class="results-toolbar"><div class="active-summary"><strong id="resultCount">0</strong>개 공고 <div id="activeChips" class="active-chips"></div></div><div class="toolbar-actions"><span class="sort-note">추천순 <b>↑</b></span><button class="view-toggle active" data-view="grid" aria-label="카드 보기">▦</button><button class="view-toggle" data-view="list" aria-label="목록 보기">☷</button></div></div>
+          <div id="jobGrid" class="job-grid"></div>
+          <div id="emptyState" class="empty-state" hidden><span>—</span><h3>조건에 맞는 공고가 없어요</h3><p>필터를 하나씩 줄여보면 더 많은 공고를 찾을 수 있어요.</p><button id="emptyReset">전체 공고 보기</button></div>
+        </section>
       </section>
 
-      <section class="guide-strip" id="career">
-        <div><p>CAREER NOTE</p><h2>지원 전, 이것만은 챙겨보세요.</h2></div>
-        <article><span>01</span><div><b>좋은 이력서의 시작</b><p>경험을 성과 중심으로 정리하는 법</p></div><i>↗</i></article>
-        <article><span>02</span><div><b>면접 답변 체크리스트</b><p>나만의 스토리를 설득력 있게</p></div><i>↗</i></article>
-      </section>
+      <section class="guide" id="guide"><div><p class="section-label">CAREER NOTE</p><h2>지원 전에 확인하면 좋은 것</h2></div><a href="#finder"><span>01</span><b>공고의 업무 내용을 먼저 읽기</b><i>↗</i></a><a href="#finder"><span>02</span><b>마감일보다 나의 적합도 확인하기</b><i>↗</i></a></section>
     </main>
 
-    <footer><a class="brand footer-brand" href="#"><span class="brand-mark"><i></i><i></i><i></i></span><span>커리어핀</span></a><p>대학생의 가능성과 좋은 기회를 연결합니다.</p><small>© 2026 Careerpin. Mock data only.</small></footer>
+    <footer><a class="brand" href="#top"><span class="brand-square">F</span><span>FINDER</span></a><p>좋은 첫 커리어를 찾는 가장 선명한 방법</p><small>MOCK DATA · 2026</small></footer>
 
-    <div class="modal-backdrop" id="modalBackdrop" hidden>
-      <article class="job-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <button class="modal-close" aria-label="닫기">×</button>
-        <div id="modalContent"></div>
-      </article>
-    </div>
+    <div class="modal-backdrop" id="modalBackdrop" hidden><article class="job-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="상세 닫기">×</button><div id="modalContent"></div></article></div>
     <div class="toast" id="toast" role="status"></div>
     <script src="script.js"></script>
   </body>
